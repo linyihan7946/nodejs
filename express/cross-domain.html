@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btnGET">GET请求</button>
+    <button id="btnPOST">POST请求</button>
+    <button id="btnDELETE">DELETE请求</button>
+    <script>
+        $("#btnGET").click(function() {
+            $.ajax({
+                url: "http://127.0.0.1/api/get",
+                method: "GET",
+                data: {
+                    name: "张三",
+                    age: 18
+                },
+                success: function(res) {
+                    console.log(res);
+                }
+            })
+        })
+        $("#btnPOST").click(function() {
+            $.ajax({
+                url: "http://127.0.0.1/api/post",
+                method: "POST",
+                data: {
+                    bookname: "水浒传",
+                    author: "施耐庵"
+                },
+                success: function(res) {
+                    console.log(res);
+                }
+            })
+        })
+        $("#btnDELETE").click(function() {
+            $.ajax({
+                url: "http://127.0.0.1/api/delete",
+                method: "DELETE",
+                success: function(res) {
+                    console.log(res);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -27,5 +27,14 @@ apiRouter.post("/post", (req, res) => {
     });
 });
 
+// 定义DELETE请求的API路由
+apiRouter.delete("/delete", (req, res) => {
+    console.log("DELETE请求成功");
+    res.send({
+        status: 0,
+        msg: "DELETE请求成功"
+    });
+});
+
 
 module.exports = apiRouter;
