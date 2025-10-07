@@ -10,6 +10,7 @@
     <button id="btnGET">GET请求</button>
     <button id="btnPOST">POST请求</button>
     <button id="btnDELETE">DELETE请求</button>
+    <button id="btnJSONP">JSONP请求</button>
     <script>
         $("#btnGET").click(function() {
             $.ajax({
@@ -41,6 +42,16 @@
             $.ajax({
                 url: "http://127.0.0.1/api/delete",
                 method: "DELETE",
+                success: function(res) {
+                    console.log(res);
+                }
+            })
+        })
+        $("#btnJSONP").click(function() {
+            $.ajax({
+                url: "http://127.0.0.1/api/jsonp",
+                method: "GET",
+                dataType: "jsonp",// 指定数据类型为jsonp
                 success: function(res) {
                     console.log(res);
                 }
